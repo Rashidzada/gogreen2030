@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - GoGreen 2030</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-green-100 flex items-center justify-center h-screen">
+    {% for message in messages %}
+    <script>
+        alert('{{ message }}');
+    </script>
+    {%endfor%}
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-bold mb-4">Login to GoGreen 2030</h1>
+        <form method="post">
+            {%csrf_token%}
+            <div class="mb-4">
+                <label class="block text-gray-700" for="username">Username</label>
+                <div class="flex items-center border border-gray-300 rounded-md">
+                    <span class="p-2 text-gray-500">
+                        <i class="fas fa-user"></i>
+                    </span>
+                    <input type="text" id="username" name="username" class="w-full p-2 outline-none">
+                </div>
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700" for="password">Password</label>
+                <div class="flex items-center border border-gray-300 rounded-md">
+                    <span class="p-2 text-gray-500">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                    <input type="password" id="password" name="password" class="w-full p-2 outline-none">
+                </div>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <a href="/forgot-password" class="text-sm text-green-600">Forgot Password?</a>
+            </div>
+            <button type="submit" class="w-full bg-green-600 text-white p-2 rounded-md">Login</button>
+        </form>
+        <div class="mt-4 text-center">
+            <p>Don't have an account? <a href="{% url 'register_view'%}" class="text-green-600">Register</a></p>
+            <p><a href="/" class="text-green-600">Back to Home</a></p>
+        </div>
+        <div class="mt-6 text-center">
+            <p class="italic">"The future belongs to those who believe in the beauty of their dreams." - Eleanor Roosevelt</p>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
