@@ -8,7 +8,7 @@ class UserProfile(models.Model):
         ('developer', 'Developer'),
     ]
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='userprofile')
     bio = models.TextField(blank=True)
     location = models.CharField(max_length=100, blank=True)
     phone = models.CharField(max_length=20, blank=True)
